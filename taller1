@@ -33,11 +33,12 @@ R/
 
 
 4) usar LD Y ST.
+4) usar LD Y ST.
 A [4] = A [2] +x;
 R/
-Ld. (& L1 ,(2X2)) , %L2
+Ld. (%L1 ,(2X2)) , %L2
 Add %L2,%L3,%L4
-St %L4 ,%L2, %L5.
+St %L4 ,%L2, 16.
 
 
 
@@ -45,6 +46,7 @@ Y = Y[40]+13;
 R/
  Ld (%L1,(40X4)), %L2
 Add %L2 ,13, %g1
+st %g1, %l1,4.
 
 5) Convertir a lenguaje de maquina
 a) int main (){
