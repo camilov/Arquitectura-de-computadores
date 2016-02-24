@@ -46,7 +46,7 @@ Y = Y[40]+13;
 R/
  Ld (%L1,(40X4)), %L2
 Add %L2 ,13, %g1
-st %g1, %l1,4.
+st %g1, %l1,0x4.
 
 5) Convertir a lenguaje de maquina
 a) int main (){
