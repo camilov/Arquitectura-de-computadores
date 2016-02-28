@@ -1,0 +1,75 @@
+Cristian camilo agudelo villegas
+1112774349
+
+Arquitectura de computadores
+
+
+Int main (){
+Int p= 3, h[300], b[40];
+h[10]=3;
+b[4]=-1;
+h[20]=b[4]+[h10]+p;
+
+return 0;
+}
+
+Convirtiendo a lenguaje de bajo nivel:
+0x0000   OR %g0,3%l0
+0x0004   OR %g0,0,%l1
+0x0008   OR %g0,1200,%l2
+0x000C   OR %g0,3,%l2
+0x0010   ST %l3,%l1,40
+0x0014   OR %g0,-1,%l4
+0x0018   ST %l4,%l2,16
+0x001C   LD %l2,8,%l5
+0x0020   LD %l1,40,%l6
+0x0024   ADD %l5,%l6,%l7
+0x0028   ADD %l7,%l0,%i0
+0x002C   ST %i0,%l1,80
+0x0030   ADD %g0,0,%g1
+
+Convirtiendo a lenguaje de maquina 
+    op      rd        op3      rs1     i      unzero           
+  | 11 |  |10000|  |000010|  |00000| | 1| |0000000000011|
+    op      rd        op3      rs1     i      unzero           
+  | 11 |  |10001|  |000010|  |00000| | 1| |0000000000000|
+    op      rd        op3      rs1     i      unzero           
+  | 11 |  |10010|  |000010|  |00000| | 1| |0110100110001| 
+    op      rd        op3      rs1     i      unzero          
+  | 11 |  |10011|  |000010|  |10001| | 1| |0000000000011| 
+
+    op      rd        op3      rs1     i      unzero           
+  | 11 |  |10101|  |001000|  |10001| | 1| |0000000101000| 
+    op      rd        op3      rs1     i      unzero           
+  | 11 |  |10100|  |000010|  |00000| | 1| |0000000010011|  
+    op      rd        op3      rs1     i      unzero         
+  | 11 |  |10100|  |001000|  |10010| | 1| |0000000010000|
+    op      rd        op3      rs1     i      unzero           
+  | 11 |  |10101|  |000000|  |10010| | 1| |0000000001000|
+
+    op      rd        op3      rs1     i      unzero           
+  | 11 |  |10110|  |000000|  |10001| | 1| |0000000101000| 
+    op      rd        op3      rs1     i    unzero      rs2  
+  | 10 |  |10111|  |000000|  |10101| | 0| |00000000|  |10110|
+    op      rd        op3       rs1    i    unzero      rs2  
+  | 10 |  |11000|  |000000|  |10111| | 0| |00000000|  |10000|
+    op      rd        op3      rs1     i    unzero           
+  | 11 |  |11000|  |001000|  |10001| | 1| |0000001010000| 
+
+    op      rd        op3      rs1     i    unzero         
+  | 10 |  |00001|  |000000|  |10001| | 1| |0000000000000|
+
+HEXA
+-E0102003
+-E2102000
+-E4102040
+-E6102003
+-E6446028
+-E4102D31
+-E844A010
+-EA04A008
+-EC046028
+-AE056010
+-C005C010
+-F0446050
+-82002000
