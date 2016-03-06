@@ -1,0 +1,40 @@
+ejercicio de valor negativo
+
+int main(){
+  int a=-19200;
+  return 0;
+  
+}
+
+representando el numero 19200 en binario en un espacio de 32 bits
+
+00000000000000000100101100000000
+
+se ponen ceros en unos y unos en ceros.
+
+
+11111111111111111011010011111111
+
+se procede a cojer los 22 bits mas significativos y el se le hace complemento tanto a los 22 bits como al sobrante
+
+primero a los 22 bits
+
+1111111111111111101101
+0000000000000000010010
+                     1
+0000000000000000010011 >>>> corresponde al numero 19 en binario
+
+0011111111
+         1
+0100000000   >>>>> corresponde al numero 256
+
+
+instrucciones
+
+SETHI -19,%l0;
+OR %LO,256,%L1;
+ADD %g0,0,O0;
+
+
+
+
